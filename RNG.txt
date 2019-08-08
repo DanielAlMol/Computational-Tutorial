@@ -1,7 +1,7 @@
 //see https://www.tutorialspoint.com/c_standard_library/stdio_h to understand this library
 
 #include <stdio.h>        
-#include <gsl/gsl_rng.h>  //
+#include <gsl/gsl_rng.h>  
 
 int main (void)
 {
