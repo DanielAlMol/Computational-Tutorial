@@ -1,0 +1,37 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 					FUNCTION CREATION					   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Create a function file, which is your system of first-order equations
+function xdot = f1(t,x)
+% establish constant variables e.g.: N_population_size=10^5;
+xdot = zeros(); %size of zeros is a column vector depends on how many initial values exist in the problem. Suppose there are 3, then xdot=zeros(3,1).
+xdot(1) = ;% 1st initial value differential
+xdot(2) = ;% 2nd initial value differential
+xdot(3) = ;% 3rd initial value differential
+end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 												   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Create second file to solve the system
+%% Initializing the problem 
+x0 = [];     % Initial Values
+tmax = ;     % Time span e.g.: seek a solution that spans 1 year
+ 
+%% Euler’s Method 
+dt =  ;         % Step size
+resE = [0 x0];  % Residual 
+Initial = x0;  
+ 
+for t = [dt:dt:tmax]
+Initial = Initial + dt.*f1(t,Initial)'; %% if you need review see the video reference posted in D2L or see me after lab 
+resE = [resE; t, Initial]; 
+end
+
+%% Solving using ode45 
+[time,resL] = ode45('f1', [0, tmax], x0);
+ 
+Plot the function and find where the function asymptotes 
+
+
+
